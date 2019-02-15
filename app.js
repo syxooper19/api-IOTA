@@ -5,6 +5,8 @@ var express = require('express');
 var hostname = 'localhost';
 var port = 3000;
 
+
+
 // Nous créons un objet de type Express.
 var app = express();
 
@@ -86,6 +88,7 @@ res.json({message : "Suppression d'une personne dans la liste", methode : req.me
 // Nous demandons à l'application d'utiliser notre routeur
 app.use(myRouter);
 
+
 // Démarrer le serveur
 app.listen(port, hostname, function(){
 	console.log("Mon serveur fonctionne sur http://"+ hostname +":"+port);
@@ -112,3 +115,6 @@ myRouter.route('/')
 .all(function(req,res){
       res.json({message : "Bienvenue sur notre API ", methode : req.method});
 });
+
+
+
